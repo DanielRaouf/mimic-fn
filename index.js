@@ -59,7 +59,7 @@ const changeToString = (to, from, name) => {
 	Object.defineProperty(to, 'toString', {...toStringDescriptor, value: newToString});
 };
 
-const mimicFn = (to, from, {ignoreNonConfigurable = false} = {}) => {
+const mimicFn = (to, from, {ignoreNonConfigurable = true} = {}) => {
 	const {name} = to;
 
 	for (const property of Reflect.ownKeys(from)) {
